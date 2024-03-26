@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { getTweetController,createTweetController,deleteTweetController,updateTweetController } from "../controllers/tweet.controller";
+import { getTweetController,createTweetController,deleteTweetController,updateTweetController,getAllTweetsController } from "../controllers/tweet.controller";
 const tweetRouter = Router();
 
 
 // Define 
 
 tweetRouter.get("/:tweetId", getTweetController)
-// tweetRouter.get("/", getAllTweetController)
+tweetRouter.get("/", getAllTweetsController)
 tweetRouter.post("/",createTweetController)
 tweetRouter.delete("/:tweetId",deleteTweetController)
 tweetRouter.put("/",updateTweetController)
